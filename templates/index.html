@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <title>Upload Image</title>
+ </head>
+ 
+ <main>
+  <body class='container'>
+    <section id="upload">
+      <center>
+        <h1>I can see your image</h1>
+        <h3>Upload an image with a text in it and see the magic happen.</h3>
+      </center>
+
+      {% if msg %}
+      <h3><center>{{ msg }}</center></h3>
+      {% endif %}
+      
+      <h1><center>Upload new File</center></h1>
+
+      <center>
+        <form method=post enctype=multipart/form-data>
+          <p>
+              <input type=file name=file>
+              <input type=submit value=Upload>
+          </p>
+        </form>
+      </center>
+
+    </section>
+
+    <section id="results">
+      <h1><center>Result:</h1></center>
+
+      {% if extracted_text %}
+      
+        <div class="confidence">
+          <center>
+            <p><strong>The confidence level of the prediction is:</strong> {{ average_confidence}} </p>
+              
+            </center>
+        </div>      
+        
+        <div class="prediction">
+          <center><p><strong>The extracted text from the image is:</strong> </p></center>
+          
+          <p>{{ extracted_text }}</p>     
+         
+        </div>          
+      
+      {% else %}
+        <i><center>The extracted text will be displayed here</center></i>
+      {% endif %}
+
+    </section>
+  </body>
+ </main>
+</html>
