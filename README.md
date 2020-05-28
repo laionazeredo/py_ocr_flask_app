@@ -22,7 +22,7 @@ After cloning, go to:
 
 and, once inside the root directory:
 
-`pip install requirements.txt`
+`pip install -r requirements.txt`
 
 This will install all the dependencies you need to start the app.
 
