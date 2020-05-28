@@ -1,7 +1,7 @@
 # py_ocr_flask_app
 App for magically read text encoded in your images. Just upload one and see the magic happen.
 
-## Click to See the Demo
+## UI Demo
 ![py_ocr_demo](py_ocr_demo.png)
 
 
